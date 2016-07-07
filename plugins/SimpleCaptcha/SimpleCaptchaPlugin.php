@@ -52,6 +52,7 @@ class SimpleCaptchaPlugin extends Plugin
 
     public function onStartRegistrationTry(Action $action)
     {
+        return true;
         if ($action->arg('simplecaptcha') !== $this->getCaptchaText()) {
             common_log(LOG_INFO, 'Stopped non-sentient registration of nickname '._ve($action->trimmed('nickname')).' from IP: '._ve($this->client_ip));
             throw new ClientException(_m('Captcha does not match!'));

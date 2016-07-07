@@ -99,12 +99,11 @@ class EmailregisterAction extends Action
                 $this->state = self::NEWEMAIL;
             } else {
                 $this->state = self::SETPASSWORD;
-
-                $this->code = $this->trimmed('code');
+              $this->code = $this->trimmed('code');
 
                 if (empty($this->code)) {
                     // TRANS: Client exception thrown when no confirmation code was provided.
-                    throw new ClientException(_m('No confirmation code.'));
+//                    throw new ClientException(_m('No confirmation code.'));
                 }
 
                 $this->invitation = Invitation::getKV('code', $this->code);
@@ -120,10 +119,10 @@ class EmailregisterAction extends Action
 
                     if (empty($this->confirmation)) {
                         // TRANS: Client exception thrown when given confirmation code was not issued.
-                        throw new ClientException(_m('No such confirmation code.'), 403);
+//                        throw new ClientException(_m('No such confirmation code.'), 403);
                     }
                 }
-
+    //            $this->confirmation = true;
                 $this->nickname = Nickname::normalize($this->trimmed('nickname'));
                 $this->password1 = $this->trimmed('password1');
                 $this->password2 = $this->trimmed('password2');

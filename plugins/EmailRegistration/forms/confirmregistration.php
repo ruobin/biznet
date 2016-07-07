@@ -63,10 +63,19 @@ class ConfirmRegistrationForm extends Form
         $this->out->element('p', 'instructions',
                             // TRANS: Form instructions.
                             sprintf(_m('Enter a password to confirm your new account.')));
-
-        $this->hidden('code', $this->code);
+ 	
 
         $this->out->elementStart('ul', 'form_data');
+
+       #	&this->elementStart('li');
+
+       # $this->element('label', array('for' => 'code'), _m('Code'));
+       # $this->element('input', array('name' => 'code',
+       #                               'type' => 'text',
+       #                               'id' => 'code',
+       #                               'value' => $this->code));
+       # 
+       # $this->elementEnd('li');
 
         $this->elementStart('li');
 
