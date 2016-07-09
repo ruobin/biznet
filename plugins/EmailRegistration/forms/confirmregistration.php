@@ -67,15 +67,15 @@ class ConfirmRegistrationForm extends Form
 
         $this->out->elementStart('ul', 'form_data');
 
-       #	&this->elementStart('li');
+       	$this->elementStart('li');
 
-       # $this->element('label', array('for' => 'code'), _m('Code'));
-       # $this->element('input', array('name' => 'code',
-       #                               'type' => 'text',
-       #                               'id' => 'code',
-       #                               'value' => $this->code));
-       # 
-       # $this->elementEnd('li');
+        $this->element('label', array('for' => 'code'), _m('Code'));
+        $this->element('input', array('name' => 'code',
+                                      'type' => 'text',
+                                      'id' => 'code',
+                                      'value' => $this->code));
+        
+        $this->elementEnd('li');
 
         $this->elementStart('li');
 
